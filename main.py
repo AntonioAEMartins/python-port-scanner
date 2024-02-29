@@ -31,12 +31,12 @@ def selectInput():
         number_threads = 100
     else:
         number_threads = int(number_threads)
-    show_error_output = input(Fore.YELLOW + "Show Error Output? [Y/n]: " + Style.RESET_ALL)
+    show_error_output = input(Fore.YELLOW + "Show Closed Ports? [Y/n]: " + Style.RESET_ALL)
     if show_error_output.lower() == "n":
         show_error_output = False
     else:
         show_error_output = True
-    print_boxed(f"Mapping Host: {host} - Port Range: {port_range} - Timeout: {timeout} sec")
+    print_boxed(f"Mapping Host: {host} - Port Range: {port_range} - Timeout: {timeout} sec - Threads: {number_threads} - Show Error Output: {show_error_output}")
     port_start_range, port_end_range = port_range.split("-")
     port_range = range(int(port_start_range), int(port_end_range) + 1)
     return host, port_range, timeout, number_threads, show_error_output
