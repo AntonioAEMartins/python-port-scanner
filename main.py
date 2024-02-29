@@ -86,7 +86,7 @@ def main():
     queue.join()
 
     t2 = datetime.now()
-    print(Fore.CYAN + f"Mapping Completed in {t2 - t1}" + Style.RESET_ALL)
+    print_boxed(f"Mapping Completed in {t2 - t1}", Fore.CYAN)
 
 if __name__ == "__main__":
     main()
